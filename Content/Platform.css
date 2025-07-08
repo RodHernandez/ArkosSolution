@@ -1,0 +1,91 @@
+﻿body {
+}
+
+div, span, p, ul, li, h1, h2, h3, h4, h5, h6, label, option, button, a, area, article {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #262626;
+}
+
+.offcanvas span, .offcanvas ul, .offcanvas li,
+.offcanvas h1, .offcanvas h2, .offcanvas h3, .offcanvas h4, .offcanvas h5, .offcanvas h6 {
+    color: white !important;
+}
+
+#panelBodyContainer {
+    padding: 10px !important;
+}
+
+    #panelBodyContainer .container-small {
+        background-color: white !important;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #panelBodyContainer .container-medium {
+        background-color: white !important;
+        max-width: 920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #panelBodyContainer .container {
+        background-color: white !important;
+        max-width: 1260px;
+    }
+
+    #panelBodyContainer .container-large {
+        background-color: white !important;
+        max-width: 1560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #panelBodyContainer .container-fluid {
+        background-color: white !important;
+    }
+
+table > thead > tr > th {
+    font-size: 13px !important;
+    text-transform: uppercase;
+}
+
+
+table > tbody > tr > td {
+    font-size: 15px !important;
+    vertical-align: middle !important;
+}
+
+td[data-bs-toggle="modal"] {
+    cursor: pointer !important;
+}
+
+    td[data-bs-toggle="modal"]:hover {
+        outline: 2px solid #6c757d;
+    }
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #panelBodyContainer {
+        padding: 24px 10px !important;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

@@ -1,0 +1,73 @@
+﻿.modal-content {
+    border-radius: 0px;
+}
+
+.modal-footer {
+    padding: 0px 0px 0px 0px;
+}
+
+    .modal-footer > .btn {
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+
+
+/* MODAL DESCRIPTION (DESCRIPCIÓN DE PRODUCTOS) */
+
+.modal-description {
+    overflow: hidden !important;
+}
+
+    .modal-description > .modal-dialog {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+        .modal-description > .modal-dialog > .modal-content {
+            min-height: calc(100vh - 0px);
+            max-height: calc(100vh - 0px);
+        }
+
+            .modal-description > .modal-dialog > .modal-content > .modal-body {
+                height: calc(100vh - 154px);
+                flex: initial;
+                background-color: white;
+                overflow-y: auto;
+            }
+
+
+
+/*************************************************/
+/*************************************************/
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .modal-description > .modal-dialog {
+        margin-left: 20px;
+        margin-right: auto;
+        margin-top: 80px;
+        max-width: 400px;
+    }
+
+        .modal-description > .modal-dialog > .modal-content {
+            min-height: calc(100vh - 160px);
+            max-height: calc(100vh - 160px);
+        }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
