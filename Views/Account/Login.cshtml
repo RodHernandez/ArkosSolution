@@ -1,0 +1,98 @@
+﻿@using ArkosWebApplication.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+<style>
+
+    .navbar {
+        display: none;
+    }
+
+    .layout-container {
+        margin-top: 0px !important;
+    }
+
+    div, span, p, ul, li, h1, h2, h3, h4, h5, h6, label, option, button, a, area, article {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #333333;
+    }
+</style>
+
+<div class="row">
+
+
+    <div class="col-12 col-lg-4 bg-white" style="height: 100vh">
+
+        <div class="p-4" style="height:560px; max-width:360px; border:0px solid red; margin-top:calc(50vh - 280px); margin-left:auto; margin-right:auto">
+
+            <section id="loginForm" style="">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="text-center mb-4 d-block" style="margin-top:-40px; opacity:1.00">
+                        <img src="~/Images/Logos/LogoArkos-02.png" height="100" />
+                    </div>
+
+                    <h3 class="text-center mb-2">Iniciar sesión</h3>
+
+                    <div class="validation-summary-container position-relative mb-2" style="height:24px">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:red !important" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-12 control-label opacity-75" })
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control form-control-login" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger", @style = "color:red !important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-12 control-label opacity-75" })
+                        <div class="col-md-12">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-login" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger", @style = "color:red !important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 mt-3">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe, new { @class = "opacity-75 ms-1" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12">
+                            <input type="submit" value="Iniciar sesión" class="btn btn-primary d-block w-100 mt-5" />
+                        </div>
+                    </div>
+                    <p class="mt-4 text-center">
+                        @Html.ActionLink("Soporte técnico", "Register")
+                        <br class="mb-2" />
+                        <a href="/Home" class="btn btn-lg btn-light mt-2" style="font-size:14px">REGRESAR</a>
+                    </p>
+                }
+            </section>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-lg-8 d-none d-lg-block text-center position-relative overflow-hidden" style="height: 100vh; background-color:#000000">
+        <div style="margin-top:calc(50vh - 91px)" class="">
+            <img src="~/Images/Logos/LogoArkos-02.png" height="120" style="" />
+            <span style="font-family: 'Michroma', sans-serif !important; font-size:26px" class="text-white d-block mt-3">ARKOS</span>
+            <span style="font-family: 'Michroma', sans-serif !important; font-size:12px" class="text-white d-block mt-0">POWERED BY DÉDALO</span>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

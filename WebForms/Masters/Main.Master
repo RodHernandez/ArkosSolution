@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ArkosWebApplication.WebForms.Masters.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title runat="server" id="title">ARKOS</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <link href="/Content/SiteModals.css" rel="stylesheet" />
+    <link href="/Content/Platform.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Michroma&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        .navbar-menu-button {
+            position: absolute;
+            top: -1px;
+            left: 0px;
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            font-size: 32px;
+            text-align: center;
+            cursor: pointer;
+            transition:all 0.2s;
+        }
+
+            .navbar-menu-button:hover, .navbar-menu-button:focus, .navbar-menu-button:active {
+                background-color: #f2f2f2 !important;
+            }
+
+            .navbar-menu-button.menu-yellow:hover, .navbar-menu-button.menu-yellow:focus, .navbar-menu-button.menu-yellow:active {
+                background-color: #ff3300 !important;
+            }
+
+            
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContainer" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+
+<body style="background-color: #ffffff">
+    <form id="formContainer" runat="server">
+        <asp:ScriptManager runat="server" ID="mainScripManager" EnablePageMethods="true" EnablePartialRendering="true" ScriptMode="Release">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-3.4.1.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap.bundle.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div>
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #ffffff; height: 70px; padding: 0px 0px; border-bottom: 1px solid #e7e7e7">
+                <div class="container-fluid ps-1 ps-lg-2 pe-1 pe-lg-2">
+
+                    <i class="bi bi-list navbar-menu-button menu-yellow" style="background-color:#c1272d !important; color:#ffffff; background-color:#ffc107" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"></i>
+                    <i class="bi bi-house navbar-menu-button" style="left:70px; color:#707070; background-color:#f8f8f8" onclick="window.location.replace('/Router/RouteProfile')"></i>
+                    <a class="navbar-brand" href="#" onclick="event.preventDefault();" style="cursor: default; padding: 0px !important; font-family: 'Michroma', sans-serif; font-size:16px; margin-left: 142px">
+                        <img src="/Images/Logos/LogoArkos-01.JPEG" alt="LOGOTIPO" height="50" style="padding: 6px; display: none; margin-top: -6px">
+                        <img src="/Images/Logos/LogoArkos-02.png" alt="LOGOTIPO" height="50" style="padding: 8px; display: inline; margin-top: -6px">
+                        <img src="/Images/Logos/LogoArkos-03.JPG" alt="LOGOTIPO" height="50" style="padding: 4px; display: none; margin-top: -6px">
+                        PROYECTO ARKOS
+                    </a>                    
+                    <a class="navbar-brand d-none d-md-block" href="#" style="font-family: 'Michroma', sans-serif; font-size: 16px; margin-right:72px" data-bs-toggle="modal" data-bs-target="#modalDescripcionUsuario">
+                        <span style="line-height: 30px; font-family: 'Michroma', sans-serif; font-size: 16px" class="">Edgar Loeffelmann</span>
+                        <i style="line-height: 30px; font-size: 24px; float: right; margin-left:12px !important; opacity:0.3" class="bi bi-person-circle ms-2"></i>
+                    </a>
+                    <i class="bi bi-power text-danger navbar-menu-button" style="left: auto; right:0px; line-height:74px" data-bs-toggle="modal" data-bs-target="#modalCerrarSesion"></i>
+                </div>
+            </nav>
+
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" style="background-color: #1d1d1d !important" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">PROYECTO ARKOS</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 p-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cobranza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cuenta</a>
+                        </li>
+                    </ul>
+                    <ul class="p-0 mt-4">
+                        <li class="ms-0" style="list-style-type: none">
+                            <asp:LinkButton runat="server" ID="buttonLogin" CssClass="btn btn-primary btn-lg d-block" Style="height: 46px; line-height: 45px; font-size: 15px" Text="CERRAR SESIÓN"></asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <asp:Panel runat="server" ID="panelBodyContainer" CssClass="pt-3 pb-2" Style="margin-top: 0px; background-color: #0085cf00; min-height: calc(100vh - 70px - 66px)" Visible="true">
+
+                <asp:ContentPlaceHolder ID="BodyContainer" runat="server"></asp:ContentPlaceHolder>
+
+            </asp:Panel>
+
+        </div>
+
+        <footer class="bg-dark text-white p-2" style="">
+            <div class="container-fluid">
+                <div class="row" style="min-height:50px">
+                    <div class="col-12 text-white text-end">
+                        <a class="navbar-brand" href="#" onclick="event.preventDefault();" style="opacity:0.4; cursor: default; padding: 0px !important; font-family: 'Michroma', sans-serif; margin: 0px !important">
+                            <img src="/Images/Logos/LogoArkos-02.png" class="d-none d-md-inline p-2" alt="ARKOS" width="50" height="50" style="padding: 0px; display: inline; filter: invert(20%); margin-left:0px">
+                            <span style="color: #cacaca; font-size:16px; top:6px" class="d-none d-md-inline position-relative">
+                                <small class="d-block position-absolute" style="top:-12px; left:0px; font-size:10px">Powered by</small>
+                                DÉDALO
+                            </span>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+        </footer>
+
+        <!-- MODAL CERRAR SESIÓN -->
+        <div class="modal fade" id="modalCerrarSesion" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cerrar Sesión</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Los cambios sin guardar se perderán. ¿Estás seguro que deseas salir? 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                        <asp:LinkButton runat="server" ID="buttonConfirmCloseSession" CssClass="btn btn-primary" OnClick="buttonLogin_Click">Confirmar</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-description fade" id="modalDescripcionUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight:600">Información de usuario</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="mb-4">
+                            <img id="imageUsuario" src="/Images/Iconografia/AvatarPeopleBlue.svg" class="img-thumbnail" style="height:320px; width:100%; object-fit:fill; padding:50px; background-color:#dee2e6" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <label class="small text-secondary">Nombre:</label>
+                                <span class="d-block">Julio Alberto Fuentes Salmerón</span>
+                                <label class="small text-secondary">Puesto:</label>
+                                <span class="d-block">Project Manager Senior</span>
+                                
+                                <label class="small text-secondary">Teléfono:</label>
+                                <span class="d-block">(55) 1234 9876</span>
+                            </div>
+                            <div class="col-4 py-4">
+                                <img src="https://img.freepik.com/premium-vector/qr-code-sample-vector-abstract-icon-isolated-white-background-vector-illustration_125869-2366.jpg" class="img-fluid" />
+                            </div>
+                        </div>
+                    
+                        <div class="row mt-0">
+                            <div class="col-12">
+                                <label class="small text-secondary">Correo:</label>
+                                <span class="d-block">jsalmeron@hub-development.com</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <script src="/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptContainer" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
+

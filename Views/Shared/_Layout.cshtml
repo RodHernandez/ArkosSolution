@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ARKOS - @ViewBag.Title</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Michroma&display=swap" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+</head>
+<body style="background-color: #323232">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151515; height: 80px; border-bottom: 1px solid #242424">
+        <div class="container-fluid ps-1 ps-lg-5 pe-1 pe-lg-5">
+            <a class="navbar-brand me-0" href="/Home" style="padding: 0px !important">
+                <img src="~/Images/Logos/LogoArkos-02.png" alt="Bootstrap" width="64" height="64" style="padding: 8px; display: inline">
+            </a>
+            <a class="navbar-brand" href="/Home">ARKOS</a>
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleMenu" aria-controls="navbarToggleMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="background-color:#151515" id="navbarToggleMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#BodyContainer_panelHomePrecios').offset().top - 80 }, 600);">Precios</a>
+                    </li>
+                    <li class="nav-item" disabled="disabled">
+                        <a class="nav-link disabled" aria-disabled="true">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="ms-0 ms-lg-3 mt-3 mt-lg-0">
+                        <a href="~/Account/Login" class="btn btn-primary btn-lg d-block" style="height:46px; line-height:45px; font-size:15px">
+                            INICIAR SESIÓN
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="layout-container" style="margin-top:80px; background-color:#0085cf00; min-height:calc(100vh - 8px)">
+
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/site")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
